@@ -1,14 +1,14 @@
 import React from "react";
 import classes from "../Home/Home.module.css";
-import { FaHandsClapping } from "react-icons/fa6";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { MdDescription, MdOutlineFileDownload } from "react-icons/md";
+import { MdOutlineFileDownload } from "react-icons/md";
 import profile from "../../../assets/CT6A4693.JPG";
 import Type from "./Type";
 
 function Home() {
   return (
     <section id="home" className={classes.wrapper}>
+      {/* Profile image and greetings */}
       <div className={classes.container}>
         <div className={classes.profile_wrapper}>
           <img src={profile} alt="profile" className={classes.profile_image} />
@@ -22,21 +22,27 @@ function Home() {
           </div>
         </div>
 
+        {/* Typewriter effect with skills */}
         <div className={classes.title}>
           <Type />
         </div>
+
+        {/* Short Descriptio about myself */}
         <p className={classes.description}>
-          I am a frontend developer passionate about bringing ideas to life and
-          solving problems with over 2 years of experiance
+          I am a computer science graduate with frontend web development skill.
+          I have more than 2 years of experience, and I love solving challenges
+          and making ideas come to life.
         </p>
-        <div>
-          <button>
-            Contact me{" "}
-            <div>
-              <FaArrowRightLong />
-            </div>
-          </button>{" "}
-          <button>
+        <div className={classes.button_container}>
+          <div className={classes.contact_me}>
+            <button className={classes.contact_button}>
+              Contact me{" "}
+              <div>
+                <FaArrowRightLong />
+              </div>
+            </button>{" "}
+          </div>
+          <button className={classes.contact_button}>
             My resume{" "}
             <div>
               <MdOutlineFileDownload />

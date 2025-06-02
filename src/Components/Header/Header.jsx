@@ -50,19 +50,17 @@ function Header() {
         </button>
       </nav>
 
-      <div className="mode_contact">
-        <button className="dark_mode">
-          {" "}
-          <CiDark size={30} />
-        </button>
+      {/* <button className="dark_mode">
+        {" "}
+        <CiDark size={30} />
+      </button> */}
 
-        <button className="contact_button">
-          Contact{" "}
-          <div className="">
-            <MdArrowOutward size={20} />
-          </div>
-        </button>
-      </div>
+      <button className="contact_button">
+        Contact{" "}
+        <div className="">
+          <MdArrowOutward size={20} />
+        </div>
+      </button>
     </header>
   );
 }

@@ -38,6 +38,7 @@ html {
   border: none;
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 400;
   /* padding: 0.5rem 1rem; */
   margin: 0.5rem 1rem;
 }
@@ -45,7 +46,7 @@ html {
 .header__link:hover,
 .header-link:active,
 .header-link:focus {
-  color: #b34700;
+  font-weight: 700;
 }
 .header__nav button {
   position: relative;
@@ -60,7 +61,7 @@ html {
   display: block;
   margin-top: 2px;
   left: 0;
-  background: #b34700;
+  background: black;
   transition: width 0.3s ease-in-out;
 }
 
@@ -71,12 +72,12 @@ html {
 .header h3 {
   font-size: 1.8rem;
   font-family: "Fugaz One", sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
 }
 
 .header h3:hover {
-  color: #b34700;
+  font-weight: 500;
 }
 .header__nav {
   display: flex;
@@ -87,6 +88,7 @@ html {
   padding: 5px 30px;
 }
 
+/*Header contact button*/
 .contact_button {
   display: flex;
   justify-content: center;
@@ -104,19 +106,4 @@ html {
 .contact_button:hover {
   transform: translatey(-4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.mode_contact {
-  display: flex;
-  gap: 40px;
-}
-.dark_mode {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dark_mode {
-  background-color: white;
-  border: transparent;
 }

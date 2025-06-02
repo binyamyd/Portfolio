@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 6rem;
+  padding-top: 7rem;
   text-align: center;
   gap: 1.5rem;
   background-color: white;
@@ -87,6 +87,68 @@
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.2rem;
   width: 30%;
 }
+
+.button_container {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.contact_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 55px;
+  border-radius: 5rem;
+  border: 1px solid grey;
+  background-color: white;
+  gap: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.contact_button:hover {
+  transform: translatey(-4px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact_me button {
+  background-color: black;
+  color: white;
+}
+
+/* Dark mode styles */
+.dark .container {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark .contact_button {
+  background-color: #1e1e1e;
+  color: white;
+  border-color: #333;
+}
+
+.dark .contact_me button {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+.dark .profile_image {
+  border-color: #444;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Add smooth transitions */
+.container,
+.contact_button,
+.profile_image {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* background color effect */
