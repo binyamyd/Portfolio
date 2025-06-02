@@ -27,7 +27,7 @@ function Home() {
           <Type />
         </div>
 
-        {/* Short Descriptio about myself */}
+        {/*Description*/}
         <p className={classes.description}>
           I am a computer science graduate with frontend web development skill.
           I have more than 2 years of experience, and I love solving challenges

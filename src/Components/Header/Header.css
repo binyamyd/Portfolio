@@ -4,6 +4,9 @@
   box-sizing: border-box;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -74,10 +77,13 @@ html {
   font-family: "Fugaz One", sans-serif;
   font-weight: 100;
   font-style: normal;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .header h3:hover {
   font-weight: 500;
+  transform: translateY(-4px);
 }
 .header__nav {
   display: flex;
@@ -104,6 +110,51 @@ html {
   transition: all 0.3s ease;
 }
 .contact_button:hover {
-  transform: translatey(-4px);
+  transform: translateY(-4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive style  */
+
+/* Hide the nav and contact button on small screens */
+@media (max-width: 862px) {
+  .header {
+    justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+  }
+
+  .header__nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    right: 1.5rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .header__nav.open {
+    display: flex;
+  }
+
+  .contact_button {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+}
+
+/* Show menu inline and hide toggle on wider screens */
+@media (min-width: 860px) {
+  .menu-toggle {
+    display: none;
+  }
 }

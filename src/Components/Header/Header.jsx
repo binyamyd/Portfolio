@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { MdArrowOutward } from "react-icons/md";
 import { CiDark } from "react-icons/ci";
+import { FiMenu, FiX } from "react-icons/fi"; // humburger icons
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); //close menu sfter navigating
     }
   };
 
@@ -16,7 +19,13 @@ function Header() {
       <button onClick={() => scrollToSection("home")} className="header__link">
         <h3>Binyam</h3>
       </button>
-      <nav className="header__nav">
+
+      {/* Mobile Menu Toggle */}
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FiX /> : <FiMenu />}
+      </button>
+
+      <nav className={`header__nav ${menuOpen ? "open" : ""}`}>
         <button
           onClick={() => scrollToSection("home")}
           className="header__link"
@@ -49,11 +58,6 @@ function Header() {
           Contact me
         </button>
       </nav>
-
-      {/* <button className="dark_mode">
-        {" "}
-        <CiDark size={30} />
-      </button> */}
 
       <button className="contact_button">
         Contact{" "}
