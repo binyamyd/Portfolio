@@ -29,7 +29,7 @@ html {
   height: 80px;
   background: white;
   z-index: 1000;
-  padding: 0.5rem 1rem;
+  /* padding: 0.5rem 1rem; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -95,21 +95,24 @@ html {
 }
 
 /*Header contact button*/
-.contact_button {
+
+.social_links {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 150px;
-  height: 45px;
-  border-radius: 5rem;
-  border: 1px solid grey;
-  background-color: white;
-  gap: 10px;
-  font-size: 1rem;
-  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.social_links a {
+  text-decoration: none;
+  color: black;
+}
+
+.icon {
+  font-size: 1.3rem;
   transition: all 0.3s ease;
 }
-.contact_button:hover {
+
+.icon:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -151,7 +154,6 @@ html {
     cursor: pointer;
   }
 }
-
 /* Show menu inline and hide toggle on wider screens */
 @media (min-width: 860px) {
   .menu-toggle {

@@ -3,6 +3,9 @@ import "./Header.css";
 import { MdArrowOutward } from "react-icons/md";
 import { CiDark } from "react-icons/ci";
 import { FiMenu, FiX } from "react-icons/fi"; // humburger icons
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,12 +41,7 @@ function Header() {
         >
           About me
         </button>
-        <button
-          onClick={() => scrollToSection("services")}
-          className="header__link"
-        >
-          Services
-        </button>
+
         <button
           onClick={() => scrollToSection("work")}
           className="header__link"
@@ -58,13 +56,17 @@ function Header() {
           Contact me
         </button>
       </nav>
-
-      <button className="contact_button">
-        Contact{" "}
-        <div className="">
-          <MdArrowOutward size={20} />
-        </div>
-      </button>
+      <div className="social_links">
+        <a href="https://github.com/binyamyd/">
+          <FaGithub size={20} className="icon" />
+        </a>
+        <a href="https://x.com/Binyam_YD">
+          <FaSquareXTwitter size={20} className="icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/binyam-yirmed-b36914242/">
+          <FaLinkedin size={20} className="icon" />
+        </a>
+      </div>
     </header>
   );
 }

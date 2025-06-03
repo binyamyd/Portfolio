@@ -8,15 +8,11 @@
   font-style: normal;
 }
 
-/* main Wrapper */
-.wrapper {
-  width: 100vw;
-}
-
 /* Container styles  */
 .container {
   scroll-margin-top: 80px;
   min-height: 100vh;
+  width: 90vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +90,7 @@
 /* Description  */
 .description {
   font-size: 1.2rem;
-  width: 30%;
+  width: 50%;
   color: #444;
 }
 
