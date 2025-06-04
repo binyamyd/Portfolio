@@ -1,10 +1,21 @@
 import React from "react";
 import classes from "./Contact.module.css";
 import { FaArrowRightLong } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Contact() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
-    <section id="contact" className={classes.container}>
+    <section id="contact" className={classes.container} data-aos="fade-up">
       <div className={classes.container_wrapper}>
         <div className={classes.info_container}>
           <h4>Connect with me</h4>

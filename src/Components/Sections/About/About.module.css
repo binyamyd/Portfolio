@@ -5,7 +5,7 @@
 }
 
 .about_section {
-  scroll-margin-top: 80px;
+  scroll-margin-top: 120px;
   min-height: 100vh;
   width: 90vw;
   background-color: white;
@@ -66,6 +66,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 .skills_section h1 {
@@ -109,4 +110,10 @@
   .image_container {
     margin-top: 2rem;
   }
+}
+
+/* Animation */
+[data-aos] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
