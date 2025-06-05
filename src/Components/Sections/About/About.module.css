@@ -1,9 +1,11 @@
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Main About section */
 .about_section {
   scroll-margin-top: 120px;
   min-height: 100vh;
@@ -15,6 +17,7 @@
   padding: 2rem;
 }
 
+/* Wrapper for image and text */
 .about_wrapper {
   display: flex;
   justify-content: center;
@@ -23,6 +26,7 @@
   margin: 0 auto 3rem;
 }
 
+/* Text content styles */
 .about_content {
   width: 50%;
   display: flex;
@@ -46,6 +50,7 @@
   line-height: 1.6;
 }
 
+/* Image section */
 .image_container {
   width: 50%;
   display: flex;
@@ -60,13 +65,14 @@
   border-radius: 8px;
 }
 
+/* Skills Section title and layout */
 .skills_section {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .skills_section h1 {
@@ -74,13 +80,58 @@
   margin-bottom: 2rem;
 }
 
-.skills_container {
+/* Wrapper to hold both rows of skills */
+.skills_wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
 }
 
-.skills_container a {
+/* Each skill row with fade edges */
+.skill_row {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Skill Track - Infinite loop requires seamless double set */
+.skill_track {
+  display: inline-flex;
+  gap: 2rem;
+  animation: scrollLeft 30s linear infinite;
+  width: fit-content;
+}
+
+/* Scrolling track for second row (right direction) */
+.skill_trackReverse {
+  display: inline-flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollRight 35s linear infinite;
+}
+
+/* Smooth pause on hover */
+.skill_track:hover {
+  animation-play-state: paused;
+}
+/* Styles for skill tags/links */
+/* Skill tag styles */
+.skill_track a {
   display: inline-block;
   padding: 0.8rem 1.5rem;
   background-color: #f3f4f6;
@@ -89,14 +140,41 @@
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.skills_container a:hover {
+.skill_track a:hover {
   background-color: #e5e7eb;
   transform: translateY(-2px);
 }
 
-/* Responsive adjustments */
+/* Seamless infinite scroll keyframe */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Rightward scrolling animation */
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Add vertical spacing for AOS animations */
+[data-aos] {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Responsive layout adjustments */
 @media (max-width: 768px) {
   .about_wrapper {
     flex-direction: column;
@@ -110,10 +188,4 @@
   .image_container {
     margin-top: 2rem;
   }
-}
-
-/* Animation */
-[data-aos] {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
 }

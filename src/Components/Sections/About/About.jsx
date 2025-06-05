@@ -6,6 +6,18 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const About = () => {
+  const skills = [
+    "HTML5",
+    "JavaScript",
+    "CSS",
+    "Github",
+    "Tailwind CSS",
+    "Node.js",
+    "React.js",
+    "Express.js",
+    "Vite",
+  ];
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: false, easing: "ease-in-out" });
   }, []);
@@ -32,12 +44,16 @@ const About = () => {
         </div>
         <div className={classes.skills_section}>
           <h1>Skills</h1>
-          <div className={classes.skills_container}>
-            <a href="">HTML5</a>
-            <a href="">JavaScript</a>
-            <a href="">CSS3</a>
-            <a href="">React</a>
-            <a href="">Redux</a>
+          <div className={classes.skills_wrapper}>
+            <div className={classes.skill_row}>
+              <div className={classes.skill_track}>
+                {[...skills, ...skills].map((skill, i) => (
+                  <a key={i} href="#">
+                    {skill}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
