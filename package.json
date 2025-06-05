@@ -16,6 +16,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-parallax-tilt": "^1.7.296",
+    "react-router-dom": "^6.30.1",
     "react-typewriter-effect": "^1.1.0"
   },
   "devDependencies": {
