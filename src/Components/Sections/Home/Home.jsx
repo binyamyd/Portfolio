@@ -9,6 +9,14 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 function Home() {
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); //close menu sfter navigating
+    }
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -19,7 +27,7 @@ function Home() {
   }, []);
 
   return (
-    <div data-aos="fade-left">
+    <div data-aos="fade-up">
       <section id="home" className={classes.wrapper}>
         {/* Profile image and greetings */}
         <div className={classes.container}>
@@ -56,19 +64,26 @@ function Home() {
           </p>
           <div className={classes.button_container}>
             <div className={classes.contact_me}>
-              <button className={classes.contact_button}>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className={classes.contact_button}
+              >
                 Contact me{" "}
                 <div>
                   <FaArrowRightLong />
                 </div>
               </button>{" "}
             </div>
-            <button className={classes.contact_button}>
+            <a
+              href="./../../../../public/Binyam_Yirmed_Resume.pdf"
+              download
+              className={classes.contact_button}
+            >
               My resume{" "}
               <div>
                 <MdOutlineFileDownload />
               </div>
-            </button>
+            </a>
           </div>
         </div>
       </section>

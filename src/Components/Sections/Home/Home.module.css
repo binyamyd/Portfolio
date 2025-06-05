@@ -102,6 +102,10 @@
   justify-content: center;
 }
 
+.button_container a {
+  text-decoration: none;
+  color: black;
+}
 .contact_button {
   display: flex;
   justify-content: center;

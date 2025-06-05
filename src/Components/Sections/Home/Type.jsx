@@ -12,7 +12,7 @@ function TypewriterComponent() {
       }}
       startDelay={100} // Auto-starts after 100ms
       cursorColor="yourCursorColor" // Set cursor color
-      multiText={["Frontend Developer", "Freelancer"]}
+      multiText={["Full Stack Developer", "Frontend Enthusiast", "Freelancer"]}
       multiTextDelay={2000} // Delay between texts
       typeSpeed={150} // Typing speed
       deleteSpeed={400} // Backspacing speed

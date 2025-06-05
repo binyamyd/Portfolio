@@ -17,7 +17,7 @@ const About = () => {
             <h1>About Me</h1>
 
             <p>
-              My name is Binyam Yirmed, a Frontend Developer who builds
+              My name is Binyam Yirmed, a Full Stack Developer who builds
               responsive and dynamic web apps. I'm a passionate frontend
               developer with a strong foundation in JavaScript and React. I
               enjoy building user-centric applications with a focus on

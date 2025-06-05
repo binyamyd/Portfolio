@@ -3,9 +3,13 @@ import classes from "./Contact.module.css";
 import { FaArrowRightLong } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
+  const formRef = useRef();
+  const [status, setStatus] = useState("");
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -13,6 +17,39 @@ function Contact() {
       easing: "ease-in-out",
     });
   }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = formRef.current["user_name"].value;
+    const email = formRef.current["user_email"].value;
+    const message = formRef.current["message"].value;
+
+    if (!name || !email || !message) {
+      setStatus("Please fill in all fields.");
+      return;
+    }
+    emailjs
+      .sendForm(
+        "service_ozgo7eb", // Replace with your service ID
+        "template_iwqqxam", // Replace with your template ID
+        formRef.current,
+        "8nN9ZvUobW3FVGZKE" // Replace with your public key
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setStatus("Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          setStatus("Something went wrong. Please try again.");
+        }
+      );
+  };
+
+  // Simulate success (in real case, send to backend or email service)
 
   return (
     <section id="contact" className={classes.container} data-aos="fade-up">
@@ -27,14 +64,20 @@ function Contact() {
         </div>
 
         <div className={classes.form_wrapper}>
-          <form action="" className={classes.form_container}>
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className={classes.form_container}
+          >
             <div className={classes.name_email}>
               <input
-                type="name"
+                name="user_name"
+                type="text"
                 placeholder="Enter your name"
                 className={classes.form}
               />
               <input
+                name="user_email"
                 type="email"
                 placeholder="Enter your email"
                 className={classes.form}
@@ -42,22 +85,23 @@ function Contact() {
             </div>
             <div className={classes.message_wrapper}>
               <textarea
-                type="message"
+                name="message"
                 placeholder="Message"
-                name=""
-                id=""
                 className={classes.form_message}
               />
             </div>
-          </form>
-        </div>
-        <div className={classes.submit}>
-          <button className={classes.submit_button}>
-            Submit now{" "}
-            <div className={classes.submit_arrow}>
-              <FaArrowRightLong />
+            <div className={classes.submit}>
+              <button type="submit" className={classes.submit_button}>
+                Submit now{" "}
+                <div className={classes.submit_arrow}>
+                  <FaArrowRightLong />
+                </div>
+              </button>
             </div>
-          </button>
+            {status && (
+              <p style={{ textAlign: "center", marginTop: "1rem" }}>{status}</p>
+            )}
+          </form>
         </div>
       </div>
     </section>
