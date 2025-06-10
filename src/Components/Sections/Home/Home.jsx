@@ -75,7 +75,7 @@ function Home() {
               </button>{" "}
             </div>
             <a
-              href="./../../../../public/Binyam_Yirmed_Resume.pdf"
+              href="/Binyam_Yirmed_Resume.pdf"
               download
               className={classes.contact_button}
             >
