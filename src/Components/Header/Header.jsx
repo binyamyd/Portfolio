@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./Header.css";
-import { MdArrowOutward } from "react-icons/md";
-import { CiDark } from "react-icons/ci";
 import { FiMenu, FiX } from "react-icons/fi"; // humburger icons
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
